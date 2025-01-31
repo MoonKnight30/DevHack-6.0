@@ -10,7 +10,7 @@ export const getNews = async (req, res) => {
       method: 'GET',
       url: 'https://real-time-news-data.p.rapidapi.com/search',
       params: {
-        query: 'The Weeknd Hurry Up Tomorrow Hurry Up Tomorrow album The Weeknd new album',
+        query: "Dylan O'Brien",
         limit: '5',
         time_published: '7d',
         country: 'US',

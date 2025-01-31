@@ -28,7 +28,7 @@ const getTrendingTopics = async () => {
 };
 
 // Function to fetch tweets for a given topic
-const searchTweets = async (query) => {
+const searchTweets = async (query, limit = 10) => {
   try {
     const options = {
       method: "GET",
@@ -36,7 +36,7 @@ const searchTweets = async (query) => {
       params: {
         query,
         section: "top",
-        limit: "10",
+        limit: limit.toString(),
         language: "en",
       },
       headers: {
@@ -46,9 +46,56 @@ const searchTweets = async (query) => {
     };
 
     const response = await axios.request(options);
-    return response.data.results || []; // Return full tweet objects
+    if (!response.data.results) return [];
+
+    let tweetsWithText = response.data.results
+      .filter((tweet) => tweet.text) // Ensure text field exists
+      .map((tweet) => tweet.text);
+
+    // If not enough tweets, fetch continuation tweets
+    if (tweetsWithText.length < limit && response.data.continuation_token) {
+      const continuationTweets = await fetchContinuationTweets(
+        query,
+        response.data.continuation_token,
+        limit - tweetsWithText.length
+      );
+      tweetsWithText = [...tweetsWithText, ...continuationTweets];
+    }
+
+    return tweetsWithText.slice(0, limit); // Return only the first `limit` tweets
   } catch (error) {
-    console.error(`Error fetching tweets for ${query}:`, error);
+    console.error("Error fetching tweets:", error);
+    return [];
+  }
+};
+
+// Function to fetch continuation tweets
+const fetchContinuationTweets = async (query, continuationToken, remainingTweets) => {
+  try {
+    const options = {
+      method: "GET",
+      url: "https://twitter154.p.rapidapi.com/search/search/continuation",
+      params: {
+        query,
+        section: "top",
+        limit: remainingTweets.toString(),
+        continuation_token: continuationToken,
+        language: "en",
+      },
+      headers: {
+        "x-rapidapi-key": RAPIDAPI_KEY,
+        "x-rapidapi-host": "twitter154.p.rapidapi.com",
+      },
+    };
+
+    const response = await axios.request(options);
+    if (!response.data.results) return [];
+
+    return response.data.results
+      .filter((tweet) => tweet.text)
+      .map((tweet) => tweet.text);
+  } catch (error) {
+    console.error("Error fetching continuation tweets:", error);
     return [];
   }
 };

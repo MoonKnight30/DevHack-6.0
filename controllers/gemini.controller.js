@@ -17,7 +17,7 @@ let isAwaitingResponse = false; // Flag to indicate if we're waiting for a respo
 
 export async function chatWithGemini() {
     const model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash-8b",
+        model: "gemini-1.5-flash",
         systemInstruction: "You are a Twitter bot and you reply to users as a news assistant",
     });
 
