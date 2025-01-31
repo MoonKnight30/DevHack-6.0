@@ -1,65 +1,81 @@
+import dotenv from "dotenv";
+dotenv.config();
+import readline from "readline"; // Import readline for reading terminal input
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import readline from "readline";
 
-// Initialize the readline interface for terminal input/output
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
 const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+    input: process.stdin,
+    output: process.stdout,
 });
 
-export const chatWithGemini = async () => {
-  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ 
-    model: "gemini-1.5-flash", 
-    systemInstruction: "You are a cat. Your name is Neko." 
-  });
-  const generationConfig = {
-    temperature: 1,
-    topP: 0.95,
-    topK: 40,
-    maxOutputTokens: 4000,
-    responseMimeType: "text/plain",
-  };
+// Array to store conversation history
+let history = [];
 
-  const chat = model.startChat({
-    generationConfig,
-    history: [
-      { role: "user", parts: [{ text: "Hello" }] },
-      { role: "model", parts: [{ text: "Great to meet you. What would you like to know?" }] },
-    ],
-  });
+let isAwaitingResponse = false; // Flag to indicate if we're waiting for a response
 
-  // Function to repeatedly ask the user for input and respond with AI's reply
-  const askQuestion = () => {
-    rl.question("\nYou: ", async (userInput) => {
-      if (userInput.toLowerCase() === "exit") {
-        console.log("Ending the conversation...");
-        rl.close(); // Close the interface if the user types 'exit'
-        return;
-      }
-
-      try {
-        let result = await chat.sendMessageStream(userInput);
-        for await (const chunk of result.stream) {
-          const chunkText = chunk.text();
-          process.stdout.write(chunkText);
-        }
-      } catch (error) {
-        if (error.response && error.response.status === 503) {
-          console.log("\n[Error]: The model is overloaded. Please try again later.");
-        } else {
-          console.error("\n[Error]: An unexpected error occurred:", error.message);
-        }
-      }
-
-      // After answering, recursively ask for more input
-      askQuestion(); // Ask the next question
+export async function chatWithGemini() {
+    const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-flash-8b",
+        systemInstruction: "You are a Twitter bot and you reply to users as a news assistant",
     });
-  };
 
-  // Start the conversation
-  askQuestion(); 
-};
+    const chat = model.startChat({
+        history, // Pass history to maintain context
+        generationConfig: {
+            temperature: 1,
+            topP: 0.95,
+            topK: 40,
+            maxOutputTokens: 400,
+            responseMimeType: "text/plain",
+        }
+    });
 
-// Call the function
-chatWithGemini();
+    // Function to get user input and send it to the model using streaming
+    function askAndRespond() {
+        if (!isAwaitingResponse) {
+            rl.question("You: ", async (msg) => {
+                if (msg.toLowerCase() === "exit") {
+                    console.log("Goodbye!");
+                    rl.close();
+                } else {
+                    isAwaitingResponse = true;
+
+                    // Add user message to history
+                    history.push({
+                        role: "user",
+                        parts: [{ text: msg }],
+                    });
+
+                    try {
+                        const result = await chat.sendMessageStream(msg);
+                        let responseText = "";
+
+                        for await (const chunk of result.stream) {
+                            const chunkText = await chunk.text();
+                            console.log("AI: ", chunkText);
+                            responseText += chunkText;
+                        }
+
+                        // Add model response to history
+                        history.push({
+                            role: "model",
+                            parts: [{ text: responseText }],
+                        });
+
+                        isAwaitingResponse = false; // Reset flag
+                        askAndRespond(); // Continue conversation
+                    } catch (error) {
+                        console.error("Error:", error);
+                        isAwaitingResponse = false;
+                    }
+                }
+            });
+        } else {
+            console.log("Please wait for the current response to complete.");
+        }
+    }
+
+    askAndRespond(); // Start the conversation loop
+}
