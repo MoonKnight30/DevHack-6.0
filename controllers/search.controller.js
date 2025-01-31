@@ -6,7 +6,7 @@ dotenv.config();
 // Function to fetch initial tweets
 export const searchTweets = async (req, res) => {
   try {
-    const query ='HURRYUPTOMORROW'; // Default search query if not provided
+    const query ='Doubt'; // Default search query if not provided
     const limit = 10; // Number of tweets we need with text
     let tweetsWithText = [];
 

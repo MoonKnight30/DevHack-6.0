@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { getTrendingTopics } from "../controllers/trends.controller.js";
+import { mergeTrendsWithTweets } from "../controllers/trends.controller.js";
 
 const router = express.Router();
 
-router.get("/trending", getTrendingTopics);
+router.get("/trending", mergeTrendsWithTweets);
 
 export default router;
