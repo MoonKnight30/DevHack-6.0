@@ -1,83 +1,102 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
+import axios from "axios";
+import fs from "fs";
+import dotenv from "dotenv";
+import keywords from "../keywords.json" assert { type: "json" };
 
 // Load environment variables
 dotenv.config();
 
-export const getNews = async (req, res) => {
-  try {
-    const options = {
-      method: 'GET',
-      url: 'https://real-time-news-data.p.rapidapi.com/search',
-      params: {
-        query: "Dylan O'Brien",
-        limit: '5',
-        time_published: '7d',
-        country: 'US',
-        lang: 'en'
-      },
-      headers: {
-        'x-rapidapi-key': process.env.RAPIDAPI_KEY,
-        'x-rapidapi-host': 'real-time-news-data.p.rapidapi.com'
-      }
-    };
+// Function to fetch news based on a keyword
+const fetchNewsForKeyword = async (keyword) => {
+  // Function to format the date to YYYY-MM-DD
+  const formatDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
 
-    // Make API request
+  // Get today's date (to)
+  const toDate = new Date();
+  const toFormatted = formatDate(toDate);
+
+  // Calculate the date 7 days before (from)
+  const fromDate = new Date();
+  fromDate.setDate(toDate.getDate() - 7); // Subtract 7 days
+  const fromFormatted = formatDate(fromDate);
+
+  // Ensure the dates are in ISO format with time and timezone (UTC)
+  const fromDateString = `${fromFormatted}T00:00:00.000Z`;
+  const toDateString = `${toFormatted}T00:00:00.000Z`;
+
+  const options = {
+    method: "GET",
+    url: "https://news-api14.p.rapidapi.com/v2/search/articles",
+    params: {
+      query: keyword,
+      language: "en",
+      from: fromDateString,
+      to: toDateString,
+      limit: "2",
+    },
+    headers: {
+      "x-rapidapi-key": process.env.RAPIDAPI_KEY, // Use env variable for API key
+      "x-rapidapi-host": "news-api14.p.rapidapi.com",
+    },
+  };
+
+  try {
     const response = await axios.request(options);
+    
 
     // Check if response has data
     if (!response.data || !response.data.data) {
-      return res.status(500).json({ error: 'No news articles found' });
+      console.error("No articles found for this keyword:", keyword);
+      return []; // No articles found for this keyword
     }
 
-    // Extract only required fields: title, link, snippet, source_url
-    const formattedNews = response.data.data.map(article => ({
+    // Format and return the news articles
+    return response.data.data.map((article) => ({
       title: article.title,
-      link: article.link,
-      snippet: article.snippet || 'Snippet not available',
-      source_url: article.source_url
+      link: article.url,
+      snippet: article.excerpt || "Snippet not available",
+      source_url: article.publisher.name,
     }));
-
-    res.json(formattedNews); // Send only the filtered news data
   } catch (error) {
-    console.error('Error fetching news:', error.message);
-    res.status(500).json({ error: 'Error fetching news' });
+    console.error("Error fetching news for keyword:", keyword, error);
+    return []; // Return empty array on error
   }
 };
 
-// // Function to summarize an article using RapidAPI Summarizer
-// export const summarizeArticle = async (req, res) => {
-//   try {
-//     const  url  = 'https://variety.com/2025/music/news/the-weeknd-drops-hurry-up-tomorrow-featuring-lana-del-rey-travis-scott-future-1236292214/'; // Accept URL from request body
+// Function to fetch news for all categories
+export const fetchNewsForCategories = async () => {
+  const allArticles = [];
 
-//     if (!url) {
-//       return res.status(400).json({ error: 'Article URL is required' });
-//     }
+  // Loop through each category in the keywords
+  for (const category in keywords) {
+    if (Object.hasOwnProperty.call(keywords, category)) {
+      const categoryKeywords = keywords[category];
 
-//     const options = {
-//       method: 'GET',
-//       url: 'https://article-extractor-and-summarizer.p.rapidapi.com/summarize',
-//       params: {
-//         url,
-//         lang: 'en',
-//         engine: '2'
-//       },
-//       headers: {
-//         'x-rapidapi-key': process.env.RAPIDAPI_KEY, // Use .env key
-//         'x-rapidapi-host': 'article-extractor-and-summarizer.p.rapidapi.com'
-//       }
-//     };
+      // Fetch news for each keyword in the category
+      for (const keyword of categoryKeywords) {
+        console.log(`Fetching news for "${keyword}"...`);
+        const articles = await fetchNewsForKeyword(keyword);
 
-//     const response = await axios.request(options);
+        if (articles.length > 0) {
+          allArticles.push({
+            category,
+            keyword,
+            articles,
+          });
+        }
+      }
+    }
+  }
 
-//     // Check if response contains a summary
-//     if (!response.data || !response.data.summary) {
-//       return res.status(500).json({ error: 'Summary not available' });
-//     }
+  // Save the aggregated result to a new JSON file
+  fs.writeFileSync("aggregated_news.json", JSON.stringify(allArticles, null, 2));
+  console.log("Aggregated news saved to aggregated_news.json");
+};
 
-//     res.json({ summary: response.data.summary }); // Return summary in JSON format
-//   } catch (error) {
-//     console.error('Error summarizing article:', error.message);
-//     res.status(500).json({ error: 'Error summarizing article' });
-//   }
-// };
+// Start fetching news
+fetchNewsForCategories();

@@ -1,10 +1,9 @@
 import express from 'express';
 
-import { getNews, summarizeArticle } from "../controllers/news.controller.js";
+import { fetchNewsForCategories } from "../controllers/news.controller.js";
 
 const router = express.Router();
 
-router.get("/headlines", getNews);
-router.get("/summarize", summarizeArticle);
+router.get("/headlines", fetchNewsForCategories);
 
 export default router;

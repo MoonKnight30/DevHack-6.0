@@ -11,6 +11,8 @@ export async function fetchKeywords() {
         model: "gemini-1.5-flash",
         systemInstruction: `You are a Twitter bot. Your job is to analyze trending hashtags and the top 10 tweets related to each. 
         Your task is to generate relevant keywords (1-2 words) for searching in news APIs. 
+        make sure you you dont make the keywords repetitive because it leads to unnecessay extra tasks
+        if you see similar ones, pick the best ones
         Categorize the keywords into four categories: political, sports, global, and entertainment.
         Provide the final result as a **stringified JSON** (not raw JSON) so it can be stored directly.
 
@@ -56,5 +58,4 @@ export async function fetchKeywords() {
     }
 }
 
-// **Automatically fetch data when script runs**
-fetchKeywords();
+
