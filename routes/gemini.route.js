@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { chatWithGemini } from "../controllers/gemini.controller.js";
+import { chatWithGemini } from "../controllers/gemini.keywords.controller.js";
 
 const router = express.Router();
 

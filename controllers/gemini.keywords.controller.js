@@ -3,6 +3,13 @@ dotenv.config();
 import readline from "readline"; // Import readline for reading terminal input
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+import fs from "fs";
+
+// Import JSON using import (requires Node.js 16+)
+import trendingData from '../trending_with_tweets.json' assert { type: 'json' };
+import { text } from "stream/consumers";
+
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const rl = readline.createInterface({
@@ -12,13 +19,14 @@ const rl = readline.createInterface({
 
 // Array to store conversation history
 let history = [];
+let responseData = [];
 
 let isAwaitingResponse = false; // Flag to indicate if we're waiting for a response
 
 export async function chatWithGemini() {
     const model = genAI.getGenerativeModel({
         model: "gemini-1.5-flash",
-        systemInstruction: "You are a Twitter bot and you reply to users as a news assistant",
+        systemInstruction: "you are a twitter bot, your job is to take information (which I will feed you with the APIs) about latest trending hashtags,  top 10 tweets related to those topics, you have to read through them and make relevant keywords for me to search in news apis, categorize then based on political, entertainment, sports, global but just give one one keywords per bunch of tweets",
     });
 
     const chat = model.startChat({
@@ -45,7 +53,7 @@ export async function chatWithGemini() {
                     // Add user message to history
                     history.push({
                         role: "user",
-                        parts: [{ text: msg }],
+                        parts: [{ text: JSON.stringify(trendingData) }],
                     });
 
                     try {
