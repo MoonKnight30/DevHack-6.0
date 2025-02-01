@@ -45,39 +45,39 @@ export const getNews = async (req, res) => {
   }
 };
 
-// Function to summarize an article using RapidAPI Summarizer
-export const summarizeArticle = async (req, res) => {
-  try {
-    const  url  = 'https://variety.com/2025/music/news/the-weeknd-drops-hurry-up-tomorrow-featuring-lana-del-rey-travis-scott-future-1236292214/'; // Accept URL from request body
+// // Function to summarize an article using RapidAPI Summarizer
+// export const summarizeArticle = async (req, res) => {
+//   try {
+//     const  url  = 'https://variety.com/2025/music/news/the-weeknd-drops-hurry-up-tomorrow-featuring-lana-del-rey-travis-scott-future-1236292214/'; // Accept URL from request body
 
-    if (!url) {
-      return res.status(400).json({ error: 'Article URL is required' });
-    }
+//     if (!url) {
+//       return res.status(400).json({ error: 'Article URL is required' });
+//     }
 
-    const options = {
-      method: 'GET',
-      url: 'https://article-extractor-and-summarizer.p.rapidapi.com/summarize',
-      params: {
-        url,
-        lang: 'en',
-        engine: '2'
-      },
-      headers: {
-        'x-rapidapi-key': process.env.RAPIDAPI_KEY, // Use .env key
-        'x-rapidapi-host': 'article-extractor-and-summarizer.p.rapidapi.com'
-      }
-    };
+//     const options = {
+//       method: 'GET',
+//       url: 'https://article-extractor-and-summarizer.p.rapidapi.com/summarize',
+//       params: {
+//         url,
+//         lang: 'en',
+//         engine: '2'
+//       },
+//       headers: {
+//         'x-rapidapi-key': process.env.RAPIDAPI_KEY, // Use .env key
+//         'x-rapidapi-host': 'article-extractor-and-summarizer.p.rapidapi.com'
+//       }
+//     };
 
-    const response = await axios.request(options);
+//     const response = await axios.request(options);
 
-    // Check if response contains a summary
-    if (!response.data || !response.data.summary) {
-      return res.status(500).json({ error: 'Summary not available' });
-    }
+//     // Check if response contains a summary
+//     if (!response.data || !response.data.summary) {
+//       return res.status(500).json({ error: 'Summary not available' });
+//     }
 
-    res.json({ summary: response.data.summary }); // Return summary in JSON format
-  } catch (error) {
-    console.error('Error summarizing article:', error.message);
-    res.status(500).json({ error: 'Error summarizing article' });
-  }
-};
+//     res.json({ summary: response.data.summary }); // Return summary in JSON format
+//   } catch (error) {
+//     console.error('Error summarizing article:', error.message);
+//     res.status(500).json({ error: 'Error summarizing article' });
+//   }
+// };

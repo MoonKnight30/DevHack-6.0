@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { chatWithGemini } from "../controllers/gemini.keywords.controller.js";
+import { fetchKeywords } from "../controllers/gemini.keywords.controller.js";
 
 const router = express.Router();
 
-router.get('/chat', chatWithGemini);
+router.get('/chat', fetchKeywords);
 
 export default router;
