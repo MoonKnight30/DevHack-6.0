@@ -2,22 +2,23 @@ import dotenv from "dotenv";
 dotenv.config();
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
-import trendingData from "../trending_with_tweets.json" assert { type: "json" };
+import articleData from "./scraped_articles_full.json" assert { type: "json" };
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-export async function fetchKeywords() {
+export async function fetchHeadlines() {
     const model = genAI.getGenerativeModel({
         model: "gemini-1.5-flash",
         systemInstruction: `You are a Twitter bot. Your job is to analyze trending hashtags and the top 10 tweets related to each. 
-        Your task is to generate relevant keywords (1-2 words) for searching in news APIs. 
-        make sure you you dont make the keywords repetitive because it leads to unnecessay extra tasks
-        if you see similar ones, pick the best ones
-        Categorize the keywords into four categories: political, sports, global, and entertainment.
-        Provide the final result as a **stringified JSON** (not raw JSON) so it can be stored directly.
+        I have done all the backend and giving you the scrapped news articles related to trending topics, you have to read their content and create a catchy headlines, not more that 8-9 words 
+        next you create a description regarding that article content in 40-50 words
+        dont write anything in new line or so in between the description content
+        there might be similar articles for a keyword, in that case just combine them and analyse and give healines
+        remember whatever data you send goes on top of an image as a post
+        put all this in a json format with headline field, source_url, description but give the json in stringified format
 
-        Here is the trending data:
-        ${JSON.stringify(trendingData)}`,
+        Here is the articles data:
+        ${JSON.stringify(articleData)}`,
     });
 
     const chat = model.startChat({
@@ -25,7 +26,7 @@ export async function fetchKeywords() {
             temperature: 1,
             topP: 0.95,
             topK: 40,
-            maxOutputTokens: 400,
+            maxOutputTokens: 4000,
             responseMimeType: "text/plain",
         },
     });
@@ -49,12 +50,12 @@ export async function fetchKeywords() {
         const jsonResponse = JSON.parse(cleanResponse);
 
         // Save cleaned JSON to file
-        fs.writeFileSync("keywords.json", JSON.stringify(jsonResponse, null, 2));
+        fs.writeFileSync("headlines.json", JSON.stringify(jsonResponse, null, 2));
 
-        console.log("✅ Response saved to keywords.json");
+        console.log("✅ Response saved to headlines.json");
     } catch (error) {
         console.error("❌ Error:", error);
-        fs.writeFileSync("keywords.json", JSON.stringify({ error: "Invalid JSON received" }, null, 2));
+        fs.writeFileSync("headlines.json", JSON.stringify({ error: "Invalid JSON received" }, null, 2));
     }
 }
 

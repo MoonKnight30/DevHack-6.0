@@ -4,6 +4,6 @@ import { fetchNewsForCategories } from "../controllers/news.controller.js";
 
 const router = express.Router();
 
-router.get("/headlines", fetchNewsForCategories);
+//router.get("/headlines", fetchNewsForCategories);
 
 export default router;

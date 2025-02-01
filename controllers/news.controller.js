@@ -98,5 +98,4 @@ export const fetchNewsForCategories = async () => {
   console.log("Aggregated news saved to aggregated_news.json");
 };
 
-// Start fetching news
-fetchNewsForCategories();
+
