@@ -36,7 +36,7 @@ const scrapeArticle = async (url) => {
 };
 
 // Define a function to scrape and save news articles
-const scrapeAndSaveArticles = async (aggregateNews) => {
+export const scrapeAndSaveArticles = async () => {
   console.log("🔍 Starting the scraping process...");
   let allArticles = [];
 
@@ -88,11 +88,3 @@ const scrapeAndSaveArticles = async (aggregateNews) => {
   console.log('✅ Scraped articles saved to scraped_articles_full.json');
 };
 
-// Directly use the imported aggregateNews data and start scraping
-scrapeAndSaveArticles(aggregateNews)
-  .then(() => {
-    console.log("🎉 Scraping process completed successfully!");
-  })
-  .catch((error) => {
-    console.error("❌ Scraping process failed:", error);
-  });

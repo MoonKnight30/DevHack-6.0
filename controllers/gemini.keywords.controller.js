@@ -14,9 +14,39 @@ export async function fetchKeywords() {
         make sure you you dont make the keywords repetitive because it leads to unnecessay extra tasks
         if you see similar ones, pick the best ones
         Categorize the keywords into four categories: political, sports, global, and entertainment.
+        I am giving you one example of output:{
+  "political": [
+    "Trump",
+    "USAID",
+    "election",
+    "authoritarian"
+  ],
+  "sports": [
+    "UFC",
+    "football",
+    "Premier League",
+    "NBA",
+    "WNBA"
+  ],
+  "global": [
+    "Israel",
+    "Palestine",
+    "Saudi Arabia",
+    "NATO",
+    "Ukraine"
+  ],
+  "entertainment": [
+    "Central Cee",
+    "Post Malone",
+    "Bud Light",
+    "Piers Morgan",
+    "Tucker Carlson"
+  ]
+}
+  give data in this format
         Provide the final result as a **stringified JSON** (not raw JSON) so it can be stored directly.
 
-        Here is the trending data:
+        Here is the trending data:  
         ${JSON.stringify(trendingData)}`,
     });
 
@@ -46,7 +76,7 @@ export async function fetchKeywords() {
             .replace(/```$/, "");      // Remove closing triple backticks if present
 
         // Parse to verify valid JSON
-        const jsonResponse = JSON.parse(cleanResponse);
+         const jsonResponse = JSON.parse(cleanResponse);
 
         // Save cleaned JSON to file
         fs.writeFileSync("keywords.json", JSON.stringify(jsonResponse, null, 2));
