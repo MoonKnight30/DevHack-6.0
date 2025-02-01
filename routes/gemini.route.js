@@ -5,7 +5,7 @@ import { fetchHeadlines } from "../controllers/gemini.headlines.controller copy.
 
 const router = express.Router();
 
-router.get('/chat', fetchKeywords);
+router.get('/keywords', fetchKeywords);
 router.get('/headlines', fetchHeadlines);
 
 

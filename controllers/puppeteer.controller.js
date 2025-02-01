@@ -47,7 +47,7 @@ const scrapeAndSaveArticles = async (aggregateNews) => {
 
     // Loop through each article under the category
     for (const article of categoryData.articles) {
-      const { title, link, snippet, source_url, keyword, category } = article;
+      const { title, link, snippet, source_url, keyword, category, thumbnail } = article;
 
       console.log(`🔍 Scraping article: ${title} - ${link}`);
 
@@ -61,6 +61,7 @@ const scrapeAndSaveArticles = async (aggregateNews) => {
           keyword,
           title,
           link,
+          thumbnail,
           snippet,
           source_url,
           article_content: articleData,
@@ -73,6 +74,7 @@ const scrapeAndSaveArticles = async (aggregateNews) => {
         category: categoryData.category,
         keyword: categoryData.keyword,
         articles: articlesForCategory,
+        thumbnail: articlesForCategory.thumbnail 
       });
       console.log(`✅ Finished processing category: ${categoryData.category}`);
     } else {

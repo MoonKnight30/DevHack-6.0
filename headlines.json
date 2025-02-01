@@ -1,117 +1,188 @@
 [
   {
-    "headline": "Trump's FBI Agent Firings",
+    "headline": "Trump's New Mideast Peace Plan",
     "source_url": "Berliner Morgenpost",
-    "description": "Several FBI agents involved in investigations against Donald Trump are reportedly facing dismissal.  The firings are sparking controversy and raising concerns about political interference in law enforcement."
+    "thumbnail": "https://img.sparknews.funkemedien.de/408134496/408134496_1737509709_v16_9_1600.jpeg",
+    "description": "Trump proposes Palestinian relocation for Middle East peace; FBI agents face potential dismissal for investigating him;  Trump's new cabinet includes several business leaders with ties to publicly traded companies;  Trump pushes universities to combat antisemitism, prompting concerns about free speech."
   },
   {
-    "headline": "Trump's Cabinet: 6 Companies to Watch",
+    "headline": "Trump Cabinet: 6 Companies to Watch",
     "source_url": "The Globe and Mail",
-    "description": "An analysis of six publicly traded companies linked to members of Donald Trump’s cabinet, including Trump Media & Technology Group, Tesla, and Roivant Sciences.  The article explores the companies' performance and potential impact."
+    "thumbnail": "https://www.theglobeandmail.com/pf/resources/assets/meta/twitter-summary-240x240.png?d=665",
+    "description": "Analysis of six publicly traded companies linked to President Trump's cabinet members;  Trump Media & Technology Group's financial performance and Truth Social platform; profiles of key figures like Elon Musk and Vivek Ramaswamy."
   },
   {
-    "headline": "Trump's Tariff Tactics",
+    "headline": "Trump's Tariff Wars: Foreign Policy",
     "source_url": "Foreign Policy",
-    "description": "An examination of Donald Trump's use of tariffs as a foreign policy tool.  The article discusses the potential consequences and reactions from other countries, along with an assessment of the winners and losers."
+    "thumbnail": "https://foreignpolicy.com/wp-content/uploads/2025/01/GettyImages-2194440818-e1737997030765.jpg",
+    "description": "Trump's continued use of tariffs as a foreign policy tool; analysis of potential retaliation and consequences; expert opinions on the effectiveness and long-term implications of Trump's tariff strategy."
   },
   {
-    "headline": "USD Soars Amidst Tariff Threats",
+    "headline": "USD Soars on Trump's Tariff Threats",
     "source_url": "ForexLive",
-    "description": "The US dollar is surging due to renewed threats from Donald Trump regarding tariffs. Bessent's desire for gradual tariff increases further fuels market fluctuations."
+    "thumbnail": "https://images.forexlive.com/images/eur%20usd%20trump%20tariff%2028%20January%202025_id_656837fc-4413-4db4-9466-44c62b4f3f77_size975.jpg",
+    "description": "US dollar surges following Trump's renewed tariff threats; Bessent's proposed tariff increase; impact on EUR, AUD, GBP, CAD, NZD; analysis of Trump's economic strategy."
   },
   {
     "headline": "USAID Halts Pakistan Funding",
     "source_url": "Brecorder",
-    "description": "The US Agency for International Development (USAID) has paused all funding for programs in Pakistan following an executive order from the Trump administration, except aid to Egypt and Israel. This move has sparked debate and concern about the impact on various development projects."
+    "thumbnail": "https://i.brecorder.com/large/2025/01/2903305543ff03e.jpg?r=033112",
+    "description": "USAID suspends all funding for programs in Pakistan following Trump's executive order; details of aid cuts and reasons given;  analysis of US foreign aid policy under Trump administration."
   },
   {
-    "headline": "Giannis and Dame's 70-Point Game",
+    "headline": "Ayesha Curry Reacts to Brink's Podcast",
+    "source_url": "Sportskeeda",
+    "thumbnail": "https://staticg.sportskeeda.com/editor/2025/01/7f7ae-17380698398276-1920.jpg",
+    "description": "Cameron Brink's podcast discusses strip clubs; Ayesha Curry's reaction; Brink's discomfort and reasons behind it; discussion on social norms and women's experience in such environments."
+  },
+  {
+    "headline": "Yoshinoya's Beef Roka Curry Collab",
+    "source_url": "SoraNews24 -Japan News-",
+    "thumbnail": "https://soranews24.com/wp-content/uploads/sites/3/2025/01/fi_40e724.jpg?w=580&h=305&crop=1",
+    "description": "Yoshinoya partners with Spicy Curry Roka for limited-time curry dish; description of the dish and its unique flavors; customer experience and review; availability and location details."
+  },
+  {
+    "headline": "Giannis, Dame Score 70 in Bucks Win",
     "source_url": "Inside Basket",
-    "description": "Giannis Antetokounmpo and Damian Lillard combined for 70 points in the Bucks' victory over the Jazz, leading their team to a 125-110 win. The article highlights their individual performances and the final score."
+    "thumbnail": "https://img.youtube.com/vi/s_DS-kf8_L8/maxresdefault.jpg",
+    "description": "Giannis Antetokounmpo and Damian Lillard combine for 70 points in Bucks' victory over Jazz; individual performances; final scores and standings; game highlights."
   },
   {
-    "headline": "Gagner's AHL Comeback Bid",
+    "headline": "Ex-Red Wing Gagner Aims for NHL Return",
     "source_url": "mlive",
-    "description": "Former Red Wings forward Sam Gagner is attempting an NHL return via the AHL. He signed a professional tryout contract with the Belleville Senators and aims to earn a spot back in the major league."
+    "thumbnail": "https://www.mlive.com/resizer/v2/OYIPJ3MYBNANDA3YOQJ64CUXZM.JPG?auth=fda15e823db96cfff90e74ba7a48ae831374db522aba9d4b40921936a0382d6b&width=1280&quality=90",
+    "description": "Sam Gagner signs AHL contract with Belleville Senators; his NHL career and stats;  his hopes for a return to the NHL; Ottawa Senators recent performance."
   },
   {
     "headline": "NHL Rumors: Saad, Rielly, Heiskanen",
     "source_url": "The Hockey Writers",
-    "description": "Speculation surrounds potential trades of NHL players Brandon Saad, Morgan Rielly, and Miro Heiskanen. The article analyzes the potential destinations and impacts on the respective teams."
+    "thumbnail": "https://s3951.pcdn.co/wp-content/uploads/2022/11/Brandon-Saad-Blues.jpg",
+    "description": "Rumors regarding Brandon Saad potentially joining the Oilers; speculation on a trade between Canucks and Maple Leafs involving Morgan Rielly;  Miro Heiskanen's injury update and its impact on the Stars."
   },
   {
-    "headline": "Rangers Acquire Edmonds, Extend Borgen",
+    "headline": "Rangers Acquire Forward Edmonds",
     "source_url": "NHL",
-    "description": "The New York Rangers have acquired forward Lucas Edmonds from the Tampa Bay Lightning and signed defenseman Will Borgen to a five-year contract extension. The article details the players' statistics and future roles with the team."
+    "thumbnail": "https://media.d3.nhle.com/image/private/t_ratio16_9-size50/prd/iz5mb6e9ldqwq31qlhdi.jpg",
+    "description": "New York Rangers acquire Lucas Edmonds from Tampa Bay Lightning; details of the trade; Edmonds' AHL and OHL statistics;  Edmonds' career highlights and draft information."
   },
   {
-    "headline": "Mavericks Defeat Pelicans",
+    "headline": "Rangers Extend Borgen's Contract",
+    "source_url": "NHL",
+    "thumbnail": "https://media.d3.nhle.com/image/private/t_ratio16_9-size50/prd/ky5zhjnlsmqbemxishu7.png",
+    "description": "New York Rangers sign Will Borgen to a five-year contract extension; his recent performance and statistics; his career highlights; Borgen's draft history."
+  },
+  {
+    "headline": "Mavericks Beat Pelicans 137-136",
     "source_url": "Dallas Mavericks",
-    "description": "The Dallas Mavericks defeated the New Orleans Pelicans 137-136, with Daniel Gafford's strong performance and Klay Thompson's scoring playing key roles.  P.J. Washington's continued success is also noted."
+    "thumbnail": "https://www.mavs.com/wp-content/uploads/2025/01/VGB0957-1.jpg",
+    "description": "Game recap of the Mavericks' win over the Pelicans; Gafford's impressive performance;  Thompson's scoring surge; Washington's contribution to the Mavericks' success."
   },
   {
-    "headline": "Pelicans' Outlook: 36 Games Left",
+    "headline": "Pelicans' Outlook with 36 Games Left",
     "source_url": "beIN SPORTS",
-    "description": "Analysis of the New Orleans Pelicans' situation with 36 regular season games remaining.  The podcast discusses their current standing, challenges, and potential outcomes for the season."
+    "thumbnail": "https://cdn.nba.com/teams/uploads/sites/1610612740/2025/01/Pelicans-Podcast-1-27-2025.jpg",
+    "description": "Analysis of the New Orleans Pelicans' current situation; team performance and future outlook; discussion of remaining games in the season; player performance and potential."
   },
   {
-    "headline": "Reggie Miller Joins NBC as NBA Analyst",
+    "headline": "Reggie Miller Joins NBC as Top NBA Analyst",
     "source_url": "ESPN",
-    "description": "Hall of Famer Reggie Miller is reportedly joining NBC Sports as its lead NBA analyst, starting with the 2025-26 season.  He will work alongside Mike Tirico and Noah Eagle."
+    "thumbnail": "https://a1.espncdn.com/combiner/i?img=%2Fphoto%2F2015%2F0810%2Fnow_otd_0824ReggieMiller_cr__1296x729.jpg",
+    "description": "Reggie Miller to join NBC Sports as lead NBA analyst; broadcasting team details; Miller's previous work with TNT; impact of the NBA's new media deal."
   },
   {
-    "headline": "NFTs, Tesla, and Trump",
+    "headline": "Reggie Miller to NBC: Sources",
+    "source_url": "The New York Times",
+    "thumbnail": "https://static01.nyt.com/athletic/uploads/wp/2025/01/29142529/reggie-miller-broadcasting-scaled.jpg?width=1200&height=630&fit=cover",
+    "description": "Reggie Miller's move to NBC Sports; broadcasting partners;  NBC's NBA broadcasting plans for the upcoming season; details of Miller's broadcasting career."
+  },
+  {
+    "headline": "Africa's Young, Fast-Growing Economy",
+    "source_url": "iAfrica",
+    "thumbnail": "https://iafrica.com/wp-content/uploads/2025/01/3-16.jpg",
+    "description": "Discussion on Africa's economic potential;  impact of AfCFTA, renewable energy, and innovation hubs;  challenges and opportunities for economic transformation; population growth projections."
+  },
+  {
+    "headline": "Africa's Unfulfilled Agricultural Vision",
+    "source_url": "African Arguments",
+    "thumbnail": "https://africanarguments.org/wp-content/uploads/2025/01/caadp-e1738063543394.jpg",
+    "description": "Assessment of CAADP's impact on African agriculture;  critiques of its top-down approach and lack of inclusivity; concerns about industrial agriculture, GMOs, and external dependencies;  call for agroecology and food sovereignty."
+  },
+  {
+    "headline": "NFT News: Tesla, Fairshake, Trump",
     "source_url": "Innovation and Tech Today",
-    "description": "An overview of recent crypto and NFT news, including Tesla's Bitcoin profit, Fairshake's election-related funding, Trump-branded merchandise accepting TRUMP tokens, and Senator Menendez's sentencing."
+    "thumbnail": "https://innotechtoday.com/wp-content/uploads/2025/01/Add-a-heading-17-1-1.jpg",
+    "description": "Tesla's Bitcoin profits; Fairshake's political influence; Trump-branded merchandise accepting TRUMP memecoin; Bob Menendez's prison sentence and his crypto stance."
   },
   {
     "headline": "Doodles NFT Project Changes CEOs",
     "source_url": "Decrypt",
-    "description": "The Ethereum NFT project Doodles has undergone a CEO change, with Scott \"Burnt Toast\" Martin taking over. The change marks a shift away from what the new CEO calls the “extractive corpo era” of the project."
+    "thumbnail": "https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/09/doodles-artwork-gID_7.png",
+    "description": "Doodles NFT project replaces CEO; Scott \"Burnt Toast\" Martin takes over; declaration of the \"extractive corpo era\" as over."
   },
   {
-    "headline": "RuPaul's Drag Race Recap: Character Focus",
+    "headline": "RuPaul’s Drag Race Recap: Character Work",
     "source_url": "Vulture",
-    "description": "A recap of RuPaul's Drag Race, focusing on the individual queens' performances and character development. The episode lacks major drama but provides insights into the contestants' strengths and weaknesses."
+    "thumbnail": "https://pyxis.nymag.com/v1/imgs/b26/b68/48532fefc2b6b204e880c54200edd84488-dragrace-ep4-s17.1x.rsocial.w1200.png",
+    "description": "Recap of RuPaul's Drag Race episode; analysis of queens' performances and strengths; discussion of character development; predictions for the rest of the season; elimination."
   },
   {
-    "headline": "Drag Race Twist Predicted",
-    "source_url": "TVLine",
-    "description": "Daya Betty correctly predicted a twist ending on RuPaul's Drag Race, where Arrietty used a lucky lever to avoid elimination.  The article discusses the prediction and the episode's outcome."
+    "headline": "Lamborghini vs Ferrari Drag Race",
+    "source_url": "The Canberra Times",
+    "thumbnail": "https://www.canberratimes.com.au/images/transform/v1/crop/frm/silverstone-feed-data/a26ef87d-769c-4098-a227-f70e43533d53.jpg/r0_57_800_477_w1200_h630_fmax.jpg",
+    "description": "Drag race between Lamborghini Aventador Ultimae and Ferrari 812 Competizione; detailed car specifications and performance; race results and analysis; comparison of both vehicles."
   },
   {
     "headline": "WWE Royal Rumble 2025 Favorites",
     "source_url": "India Today",
-    "description": "An overview of the favorites to win the men's Royal Rumble match in 2025, including several notable wrestlers and legends. The article provides a list of anticipated participants."
+    "thumbnail": "https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2025/01/john-cena-14itg-1738160166228_1200_675.jpg",
+    "description": "Preview of the WWE Royal Rumble 2025 men's match;  analysis of potential winners;  mention of participating legends and superstars."
   },
   {
-    "headline": "WWE Royal Rumble 2025: Date, Time & More",
-    "source_url": "The Playoffs",
-    "description": "Details about the 2025 WWE Royal Rumble, including the date, time, location, and streaming options.  The article lists some of the participating wrestlers and the main events."
+    "headline": "WWE Royal Rumble 2025: Date, Channel",
+    "source_url": "",
+    "thumbnail": "https://theplayoffs.news/en/wp-content/uploads/2025/01/Ghb_MoDWgAA0GOf-5.jpeg",
+    "description": "Details about the WWE Royal Rumble 2025; date, time, venue, and broadcasting information;  list of participating superstars;  other matches planned for the event."
   },
   {
-    "headline": "Sabrina Carpenter Responds to Critics",
+    "headline": "Sabrina Carpenter Addresses Critics",
     "source_url": "Geo News",
-    "description": "Singer Sabrina Carpenter addresses criticism of her increasingly sexualized image and performance style.  She defends her artistic choices and expresses frustration over the double standards faced by female artists."
+    "thumbnail": "https://www.geo.tv/assets/uploads/updates/2025-01/l_587430_033606_updates.jpg",
+    "description": "Sabrina Carpenter responds to criticism about her racy persona;  her statement on female artists being shamed;  her perspective on criticism focused on her sexuality;  call for kindness among women in the industry."
   },
   {
-    "headline": "Saving the Willow Tit",
+    "headline": "Sabrina Carpenter: Female Artists Shamed",
+    "source_url": "Far Out Magazine",
+    "thumbnail": "https://faroutmagazine.co.uk/static/uploads/1/2025/01/Sabrina-Carptenter-Singer-Musician-Songwriter-2024-Far-Out-Magazine.jpg",
+    "description": "Sabrina Carpenter responds to criticism of her image;  her defense of embracing sexuality in her work;  comparison to other female artists who have faced similar criticism;  dismissal of critics as regressive."
+  },
+  {
+    "headline": "Saving the Willow Tit from Extinction",
     "source_url": "BBC",
-    "description": "A conservation project underway in Cornwall to save the critically endangered willow tit. The project involves habitat restoration and community involvement."
+    "thumbnail": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/e0c7/live/3bb0d8c0-dc98-11ef-ad9c-6bfba0246f34.jpg",
+    "description": "Conservation efforts to save the willow tit;  details of the project in Cornwall;  reasons for the bird's decline;  habitat restoration and management techniques; collaboration between organizations."
   },
   {
-    "headline": "Google's Willow Quantum Chip",
+    "headline": "Google's Willow Chip Quantum Leap",
     "source_url": "Forbes",
-    "description": "Google's 105-qubit Willow quantum chip achieves major milestones, surpassing classical computers in a key benchmark.  The article discusses the chip's advancements and Google's roadmap for fault-tolerant quantum computing."
+    "thumbnail": "https://imageio.forbes.com/specials-images/imageserve/679949c0d0e2738481097d0c/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+    "description": "Google's Willow quantum chip achieves major milestones;  performance on random circuit sampling benchmark;  explanation of quantum error correction;  Google's roadmap for fault-tolerant quantum computing."
   },
   {
-    "headline": "Hasan Ali Rejoins Warwickshire",
+    "headline": "Hasan Ali to Rejoin Warwickshire",
     "source_url": "The Express Tribune",
-    "description": "Pakistani cricketer Hasan Ali will rejoin Warwickshire County Cricket Club for the 2025 season, playing across all formats.  His return follows recovery from injury and discussions with the Pakistan Cricket Board."
+    "thumbnail": "https://i.tribune.com.pk/media/images/2246865-hassanali-1636823792-504-640x4801636827793-0/2246865-hassanali-1636823792-504-640x4801636827793-0.jpg",
+    "description": "Pakistan pacer Hasan Ali to return to Warwickshire for the 2025 season;  details of his contract;  his past performance with the team;  statements from Hasan and the coach."
   },
   {
-    "headline": "K-pop on Netflix: February Releases",
+    "headline": "Hasan Ali Returns to Warwickshire",
+    "source_url": "Geo Super",
+    "thumbnail": "https://www.geosuper.tv/assets/uploads/updates/2025-01-25/l_41714_094829_updates.jpg",
+    "description": "Hasan Ali rejoins Warwickshire for the 2025 season;  his playing schedule; recovery from injury and rehabilitation; statements from Hasan Ali and Mark Robinson;  expectations for the upcoming season."
+  },
+  {
+    "headline": "February's Korean Content on Netflix",
     "source_url": "pinkvilla",
-    "description": "Preview of upcoming Korean dramas and movies releasing on Netflix in February 2025, including Song Joong Ki's 'Bogotá' and Choi Woo Shik and Park Bo Young's 'Melo Movie'."
+    "thumbnail": "https://www.pinkvilla.com/images/2025-01/93997927_bogota-melo.jpg",
+    "description": "Preview of Korean dramas and movies coming to Netflix in February; highlights of various titles; genre diversity; release dates and brief descriptions;  mention of Song Joong Ki and other notable actors."
   }
 ]

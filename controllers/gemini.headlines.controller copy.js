@@ -15,7 +15,9 @@ export async function fetchHeadlines() {
         dont write anything in new line or so in between the description content
         there might be similar articles for a keyword, in that case just combine them and analyse and give healines
         remember whatever data you send goes on top of an image as a post
-        put all this in a json format with headline field, source_url, description but give the json in stringified format
+        put all this in a json format with headline field, source_url,thumbnail, description but give the json in stringified format
+        again remember dont write anything in new line, it will break the json file which I will make afterwards, also add commas and brackets where ever neccesarry
+        source_url is what you got from the data, dont keep link inside it, its just source publication name
 
         Here is the articles data:
         ${JSON.stringify(articleData)}`,

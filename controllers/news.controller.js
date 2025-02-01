@@ -61,6 +61,7 @@ const fetchNewsForKeyword = async (keyword) => {
       link: article.url,
       snippet: article.excerpt || "Snippet not available",
       source_url: article.publisher.name,
+      thumbnail:article.thumbnail
     }));
   } catch (error) {
     console.error("Error fetching news for keyword:", keyword, error);
